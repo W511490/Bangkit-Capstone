@@ -1,2 +1,2 @@
 # Bangkit-Capstone
-This repository for our tem bangkit product capstone name “CeriaKids” App for Child Growth Monitoring
+This repository for our team bangkit product capstone project name “CeriaKids” App for Child Growth Monitoring
