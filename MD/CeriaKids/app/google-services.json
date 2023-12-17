@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "975436256722",
+    "project_id": "capstone-project-408305",
+    "storage_bucket": "capstone-project-408305.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975436256722:android:ac491638875b8fe831a40b",
+        "android_client_info": {
+          "package_name": "com.example.ceriakids"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975436256722-a0eq2qvv6bqi8lmfn7el0o0ti6v4a7uh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChZVufntvzfyNfr8LDBpVNSYbNHCpfVck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975436256722-a0eq2qvv6bqi8lmfn7el0o0ti6v4a7uh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

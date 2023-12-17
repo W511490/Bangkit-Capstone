@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">CeriaKids</string>
+    <string name="title_home">Home</string>
+    <string name="title_report">Laporan</string>
+    <string name="title_Profil">Profil</string>
+    <string name="action_login">Masukkan Nomor Telepon</string>
+    <string name="masukkan_no">Masukkan Nomor Telepon</string>
+    <string name="desc">Untuk masuk ke CeriaKids atau "\n" membuat akun baru</string>
+    <string name="complete_profil">Lengkapi Profil</string>
+    <string name="information">Informasi Umum</string>
+    <string name="name">Nama Lengkap</string>
+    <string name="date">Tanggal Lahir</string>
+    <string name="gender">Jenis Kelamin</string>
+    <string name="man">Laki-Laki</string>
+    <string name="women">Perempuan</string>
+    <string name="contact">Informasi Kontak</string>
+    <string name="number">Nomor Telepon</string>
+    <string name="email">Email</string>
+    <string name="save">Simpan</string>
+    <string name="login">Masuk</string>
+    <string name="say">Selamat Datang, Ahmad</string>
+    <string name="myname">Namaku</string>
+    <string name="mynum">Nomorku</string>
+    <string name="mymail">Emailku</string>
+    <string name="default_web_client_id">975436256722-a0eq2qvv6bqi8lmfn7el0o0ti6v4a7uh.apps.googleusercontent.com</string>
+</resources>
