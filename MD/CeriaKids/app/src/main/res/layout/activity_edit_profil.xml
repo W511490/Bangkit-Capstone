@@ -11,8 +11,8 @@
         android:id="@+id/Tvinformation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
         android:text="@string/information"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -63,17 +63,17 @@
         android:id="@+id/editDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="32dp"
         android:ems="17"
+        android:focusable="false"
         android:hint="@string/date"
         android:inputType="none"
-        android:focusable="false"
         android:onClick="showDatePicker"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TvDate"/>
+        app:layout_constraintTop_toBottomOf="@+id/TvDate" />
 
     <TextView
         android:id="@+id/TvGender"
@@ -86,36 +86,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editDate" />
 
-    <RadioButton
-        android:id="@+id/RbMan"
-        android:layout_width="0dp"
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/TvGender"
         android:layout_marginTop="12dp"
-        android:text="@string/man"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TvGender" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <RadioButton
-        android:id="@+id/RbWomen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/women"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/RbMan"
-        app:layout_constraintTop_toBottomOf="@+id/TvGender" />
+        <RadioButton
+            android:id="@+id/RbMan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/man"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/RbWomen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/women"
+            android:layout_weight="1"/>
+    </RadioGroup>
 
     <TextView
         android:id="@+id/TvContact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="12dp"
         android:text="@string/contact"
-        app:layout_constraintEnd_toEndOf="@+id/RbMan"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RbMan" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <TextView
         android:id="@+id/TvNumber"
@@ -173,12 +179,25 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="30dp"
+        android:background="@drawable/border"
         android:backgroundTint="@color/yellow"
         android:text="@string/save"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EtEmail" />
+
+    <TextView
+        android:id="@+id/Tvreset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/reset"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btnSave"
+        app:layout_constraintStart_toStartOf="@+id/btnSave"
+        app:layout_constraintTop_toBottomOf="@+id/btnSave" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

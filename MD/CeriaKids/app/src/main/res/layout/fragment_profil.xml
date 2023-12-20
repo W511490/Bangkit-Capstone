@@ -6,17 +6,130 @@
     android:layout_height="match_parent"
     tools:context=".ui.profil.ProfilFragment">
 
-    <TextView
-        android:id="@+id/text_profil"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/Ivprofilavatar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="contentDescription"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/Tvprofilname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/myname"
+            app:layout_constraintStart_toEndOf="@+id/Ivprofilavatar"
+            app:layout_constraintTop_toTopOf="@+id/Ivprofilavatar" />
+
+        <TextView
+            android:id="@+id/Tvprofilnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:text="@string/mynum"
+            app:layout_constraintEnd_toEndOf="@+id/Tvprofilname"
+            app:layout_constraintStart_toStartOf="@+id/Tvprofilname"
+            app:layout_constraintTop_toBottomOf="@+id/Tvprofilname" />
+
+        <TextView
+            android:id="@+id/Tvprofilmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/mymail"
+            app:layout_constraintEnd_toEndOf="@+id/Tvprofilnum"
+            app:layout_constraintStart_toStartOf="@+id/Tvprofilnum"
+            app:layout_constraintTop_toBottomOf="@+id/Tvprofilnum" />
+
+        <ImageButton
+            android:id="@+id/btnEdit"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="32dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_pencil"
+            tools:ignore="contentDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/Tvprofilchild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="335dp"
+        android:text="@string/profilchild"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <ImageButton
+        android:id="@+id/fabaddchild"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_baseline_add_circle_24"
+        app:layout_constraintEnd_toEndOf="@+id/Tvprofilchild"
+        app:layout_constraintStart_toStartOf="@+id/Tvprofilchild"
+        app:layout_constraintTop_toBottomOf="@+id/Tvprofilchild"
+        tools:ignore="contentDescription"/>
+
+    <TextView
+        android:id="@+id/addprofilchild"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/addprofilchild"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fabaddchild"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fabaddchild"
+        app:layout_constraintTop_toBottomOf="@+id/Tvprofilchild" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Rvchild"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fabaddchild"
+        tools:listitem="@layout/item_card_child" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:text="@string/logout"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/Rvchild" />
 </androidx.constraintlayout.widget.ConstraintLayout>

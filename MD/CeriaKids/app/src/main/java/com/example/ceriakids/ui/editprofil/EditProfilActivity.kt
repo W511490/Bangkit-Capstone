@@ -4,14 +4,13 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.view.MenuItem
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.DatePicker
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.ceriakids.R
 import com.example.ceriakids.databinding.ActivityEditProfilBinding
-import com.example.ceriakids.ui.login.LoginActivity
 import com.example.ceriakids.ui.main.MainActivity
 import java.util.Calendar
 
@@ -24,6 +23,9 @@ class EditProfilActivity : AppCompatActivity() {
         binding = ActivityEditProfilBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.Tvreset.setOnClickListener {
+            resetInput()
+        }
 
         binding.editDate.setOnClickListener {
             showDatePicker()
@@ -31,6 +33,20 @@ class EditProfilActivity : AppCompatActivity() {
 
         binding.btnSave.setOnClickListener {
             saveProfil()
+        }
+
+        binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
+            when (checkedId) {
+                R.id.RbMan -> {
+                    // Jika RadioButton "Laki-laki" dipilih, nonaktifkan RadioButton "Perempuan"
+                    binding.RbWomen.isChecked = false
+                }
+
+                R.id.RbWomen -> {
+                    // Jika RadioButton "Perempuan" dipilih, nonaktifkan RadioButton "Laki-laki"
+                    binding.RbMan.isChecked = false
+                }
+            }
         }
 
         setupView()
@@ -50,6 +66,17 @@ class EditProfilActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
+    private fun resetInput() {
+        binding.nameInput.editText?.setText("")
+        binding.editDate.setText("")
+        binding.EtPhone.setText("")
+        binding.EtEmail.setText("")
+        binding.RbMan.setText("")
+        binding.RbWomen.setText("")
+        binding.RbMan.text = getString(R.string.man)
+        binding.RbWomen.text = getString(R.string.women)
+        binding.radioGroup.clearCheck()
+    }
 
     private fun showDatePicker() {
         val calendar = Calendar.getInstance()
@@ -74,16 +101,11 @@ class EditProfilActivity : AppCompatActivity() {
         val email = binding.EtEmail.text.toString()
 
         if (name.isNotEmpty() && date.isNotEmpty() && phone.isNotEmpty()) {
-            // Semua bidang telah diisi, Anda bisa menambahkan logika untuk menyimpan data di sini
-            // Misalnya, Anda bisa menyimpan data ke database atau tempat penyimpanan lainnya
             val intent = Intent(this@EditProfilActivity, MainActivity::class.java)
             startActivity(intent)
-            // Tampilkan pesan bahwa data berhasil disimpan
             Toast.makeText(this, "Data berhasil disimpan", Toast.LENGTH_SHORT).show()
-
-            // Lanjutkan ke langkah selanjutnya, seperti menutup aktivitas ini atau melakukan sesuatu yang sesuai dengan alur aplikasi Anda
+            resetInput()
         } else {
-            // Salah satu atau beberapa bidang masih kosong, tampilkan pesan kesalahan
             Toast.makeText(this, "Harap isi semua bidang", Toast.LENGTH_SHORT).show()
         }
     }

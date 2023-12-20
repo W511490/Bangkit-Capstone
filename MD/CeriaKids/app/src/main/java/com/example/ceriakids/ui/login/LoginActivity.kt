@@ -3,6 +3,7 @@ package com.example.ceriakids.ui.login
 import android.app.Activity
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -15,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.ceriakids.R
 import com.example.ceriakids.databinding.ActivityLoginBinding
 import com.example.ceriakids.ui.editprofil.EditProfilActivity
+import com.example.ceriakids.ui.home.HomeFragment
+import com.example.ceriakids.ui.home.HomeViewModel
 import com.example.ceriakids.ui.main.MainActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -37,6 +40,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var auth: FirebaseAuth
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -48,6 +52,7 @@ class LoginActivity : AppCompatActivity() {
 
         setupView()
         setupAction()
+        checkLoginStatus()
 
         val gso = GoogleSignInOptions
             .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -64,6 +69,15 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    private fun checkLoginStatus() {
+        val sharedPreferences: SharedPreferences = getSharedPreferences("login_status", MODE_PRIVATE)
+        val isLoggedIn: Boolean = sharedPreferences.getBoolean("isLoggedIn", false)
+
+        if (isLoggedIn) {
+            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+            finish()
+        }
+    }
     private fun setupView() {
         @Suppress("DEPRECATION")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -132,6 +146,10 @@ class LoginActivity : AppCompatActivity() {
 
     private fun updateUI(currentUser: FirebaseUser?) {
         if (currentUser != null) {
+            val sharedPreferences: SharedPreferences = getSharedPreferences("login_status", MODE_PRIVATE)
+            val editor: SharedPreferences.Editor = sharedPreferences.edit()
+            editor.putBoolean("isLoggedIn", true)
+            editor.apply()
             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
             finish()
         }
@@ -142,10 +160,6 @@ class LoginActivity : AppCompatActivity() {
     }
 }
 
-
-//
-//
-//
 //    private fun loading(result: Boolean) {
 //        if (result) {
 //            binding.progressBar.visibility = View.VISIBLE

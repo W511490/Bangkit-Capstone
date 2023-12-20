@@ -17,10 +17,23 @@
     <string name="number">Nomor Telepon</string>
     <string name="email">Email</string>
     <string name="save">Simpan</string>
+    <string name="reset">Reset</string>
     <string name="login">Masuk</string>
+    <string name="logout">Keluar</string>
+    <string name="add_child">Nama Anak</string>
+    <string name="title_gizi">Nama Makanan</string>
+    <string name="desc_gizi">Deskripsi Gizi</string>
     <string name="say">Selamat Datang, Ahmad</string>
     <string name="myname">Namaku</string>
     <string name="mynum">Nomorku</string>
     <string name="mymail">Emailku</string>
+    <string name="profilchild">Profil anak</string>
+    <string name="addprofilchild">Tambah profil anak</string>
     <string name="default_web_client_id">975436256722-a0eq2qvv6bqi8lmfn7el0o0ti6v4a7uh.apps.googleusercontent.com</string>
+    <string name="input_child">Masukkan nama anak</string>
+    <string name="date_report">Tanggal Laporan</string>
+    <string name="weight">Berat</string>
+    <string name="height">Tinggi</string>
+    <string name="kg">kg</string>
+    <string name="cm">cm</string>
 </resources>
