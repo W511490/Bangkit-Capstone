@@ -36,4 +36,94 @@
     <string name="height">Tinggi</string>
     <string name="kg">kg</string>
     <string name="cm">cm</string>
+
+
+    <string-array name="data_name">
+        <item>Anggur</item>
+        <item>Bayam</item>
+        <item>Labu</item>
+        <item>Mie</item>
+        <item>Sarden</item>
+        <item>Strawberry</item>
+        <item>Tahu</item>
+        <item>Telur</item>
+        <item>Timun</item>
+        <item>Tomat</item>
+    </string-array>
+
+    <string-array name="data_description">
+        <item>Tentang Gizi
+        Calcium: 10
+        Protein:25.0
+        Carbohydrate:18.0
+        Fat:0.2
+        Calorine:69</item>
+        <item>Tentang Gizi
+        Calcium: 99
+        Protein:0.8
+        Carbohydrate:0.4
+        Fat:0.4
+        Calorine:23</item>
+        <item>Tentang Gizi
+        Calcium: 27
+        Protein:0.6
+        Carbohydrate:6.5
+        Fat:0.1
+        Calorine:40</item>
+        <item>Tentang Gizi
+        Calcium: 97
+        Protein:21.0
+        Carbohydrate:31.0
+        Fat:0.6
+        Calorine:352</item>
+        <item>Tentang Gizi
+        Calcium: 8
+        Protein:21.0
+        Carbohydrate:0.0
+        Fat:9.0
+        Calorine:210</item>
+        <item>Tentang Gizi
+        Calcium: 16
+        Protein:0.9
+        Carbohydrate:8.0
+        Fat:0.4
+        Calorine:32</item>
+        <item>Tentang Gizi
+        Calcium: 81
+        Protein:27.0
+        Carbohydrate:2.4
+        Fat:0.4
+        Calorine:77</item>
+        <item>Tentang Gizi
+        Calcium: 56
+        Protein:25.0
+        Carbohydrate:0.6
+        Fat:4.8
+        Calorine:78</item>
+        <item>Tentang Gizi
+        Calcium: 15
+        Protein:8.1
+        Carbohydrate:3.6
+        Fat:0.1
+        Calorine:15</item>
+        <item>Tentang Gizi
+        Calcium: 6
+        Protein:0.7
+        Carbohydrate:3.9
+        Fat:0.2
+        Calorine:18</item>
+    </string-array>
+
+    <integer-array name="data_food">
+        <item>@drawable/anggur</item>
+        <item>@drawable/bayam</item>
+        <item>@drawable/labu</item>
+        <item>@drawable/mie</item>
+        <item>@drawable/sarden</item>
+        <item>@drawable/straubery</item>
+        <item>@drawable/tahu</item>
+        <item>@drawable/telur</item>
+        <item>@drawable/timun</item>
+        <item>@drawable/tomat</item>
+    </integer-array>
 </resources>
